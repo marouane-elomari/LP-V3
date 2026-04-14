@@ -1,0 +1,22 @@
+# Enable rewrite engine
+RewriteEngine On
+RewriteBase /
+
+# --------------------------------------------
+# 1️⃣ Redirect root "/" to "/fr"
+# --------------------------------------------
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /fr [R=301,L]
+
+# --------------------------------------------
+# 2️⃣ Don't rewrite existing files or directories
+# --------------------------------------------
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# --------------------------------------------
+# 3️⃣ Rewrite everything else to index.html
+# This allows BrowserRouter to handle SPA routes
+# --------------------------------------------
+RewriteRule ^ index.html [L]
