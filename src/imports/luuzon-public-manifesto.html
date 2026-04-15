@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luuzon — Public Manifesto</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --ink: #0d0d0f;
+    --muted: #8a8a8a;
+    --rule: #d8d4cc;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Serif Display', serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+  .doc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 80px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .doc-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+  .manifesto-title {
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+  }
+  .manifesto-title em { font-style: italic; color: var(--muted); }
+  .intro {
+    font-size: 20px;
+    line-height: 1.65;
+    margin-bottom: 64px;
+    font-weight: 400;
+    max-width: 600px;
+  }
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 56px 0; }
+  .section { margin-bottom: 56px; }
+  .section-marker {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  h2 em { font-style: italic; }
+  p {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  .pull {
+    border-left: 3px solid var(--ink);
+    padding: 4px 0 4px 28px;
+    margin: 40px 0;
+    font-size: clamp(20px, 3.5vw, 28px);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .declaration {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 40px 44px;
+    margin: 48px 0;
+  }
+  .declaration p {
+    color: #e8e4dc;
+    font-size: 18px;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .declaration p:last-child { margin-bottom: 0; }
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin: 48px 0;
+    border: 1px solid var(--rule);
+  }
+  .stat-cell { background: var(--bg); padding: 24px 20px; text-align: center; }
+  .stat-big {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .phase-list {
+    display: grid;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 32px 0;
+  }
+  .phase-item {
+    background: var(--bg);
+    padding: 22px 26px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .phase-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding-top: 3px;
+  }
+  .phase-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .phase-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .closing { margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  .closing-title {
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .closing-title em { font-style: italic; color: var(--muted); }
+  .cta-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 16px 28px;
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .cta-block:hover {
+    opacity: 0.9;
+  }
+  .footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  @media (max-width: 600px) {
+    body { padding: 40px 24px 80px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .doc-header { flex-direction: column; gap: 12px; }
+    .doc-type { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <div class="logo">Luuzon</div>
+  <div class="doc-type">Public Manifesto<br>2026</div>
+</div>
+
+<h1 class="manifesto-title">Trust in rentals,<br><em>restored.</em></h1>
+
+<p class="intro">We built Luuzon because the rental market stopped working — for agencies and for tenants. And no one was fixing it. So we did.</p>
+
+<hr class="rule">
+
+<div class="section">
+  <div class="section-marker">I — The Broken System</div>
+  <h2>Your agency is doing work<br><em>a machine should do.</em></h2>
+  <p>Right now, somewhere in France, a letting agent is reading a payslip by hand. Calling an employer to confirm what is already on paper. Cross-referencing a tax return against an ID that may or may not be real. Then doing it again for the next file. And the next.</p>
+  <p>It takes 45 minutes per application. It has always taken 45 minutes. And it will keep taking 45 minutes — until something changes.</p>
+  <div class="pull">1 in 4 documents submitted to rental agencies has been manipulated. The fraud is getting smarter. The process is not.</div>
+  <p>This is not a workflow problem. It is not a software problem. It is a structural failure — and no CRM, no email tool, no spreadsheet is going to fix it.</p>
+</div>
+
+<hr class="rule">
+
+<div class="section">
+  <div class="section-marker">II — The Historical Shift</div>
+  <h2>This is not the first time<br><em>an industry automated its decisions.</em></h2>
+  <p>In 1900, we automated physical labour. Factories ran on machines, not muscle.</p>
+  <p>In 2000, we automated information. Computers replaced filing cabinets and manual records.</p>
+  <p>In 2025, we automate decisions.</p>
+  <p>Every industry that still makes decisions by hand is about to change. The rental market is one of them — and it is long overdue.</p>
+</div>
+
+<hr class="rule">
+
+<div class="section">
+  <div class="section-marker">III — What We Built</div>
+  <h2>The verification infrastructure<br><em>the rental market should have had 10 years ago.</em></h2>
+  <p>Luuzon replaces the manual document review process — permanently. Our AI reads, verifies, and scores every tenant application in under 30 seconds. It detects manipulation. It cross-checks identity. It scores risk. It gives your team a complete, decision-ready file before a human has opened a single PDF.</p>
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="stat-big">&lt; 30s</div>
+      <div class="stat-label">Full application analysis</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">99.7%</div>
+      <div class="stat-label">Fraud detection rate</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">45min</div>
+      <div class="stat-label">Saved per application</div>
+    </div>
+  </div>
+  <p>But we did not stop at verification. Every tenant who goes through Luuzon earns a trust passport — a portable, encrypted proof of identity, income, and rental history. Verified once. Valid everywhere. When a pre-verified tenant applies to your property, their file is already done. You review, you decide, you sign.</p>
+</div>
+
+<hr class="rule">
+
+<div class="section">
+  <div class="section-marker">IV — What This Means for You</div>
+  <h2>The agencies that move now<br><em>will outcompete every agency that does not.</em></h2>
+  <p>We are not here to protect the way things have always been done. We are here to replace what is broken inside the industry — and give the professionals who adapt a structural advantage over those who do not.</p>
+  <div class="declaration">
+    <p>The agencies running on Luuzon will close files faster than any manual process allows.</p>
+    <p>They will detect fraud their competitors miss.</p>
+    <p>They will attract better tenants — pre-verified, ready to sign.</p>
+    <p>They will operate at margins their competitors cannot match.</p>
+    <p>The ones who wait will catch up eventually. Or they will not.</p>
+  </div>
+  <p>This is not a warning. It is an invitation. The window to get ahead of this is open right now — and the EU AI Act, accelerating fraud, and rising tenant expectations mean it will not stay open forever.</p>
+</div>
+
+<hr class="rule">
+
+<div class="section">
+  <div class="section-marker">V — Where This Goes</div>
+  <h2>We are building the infrastructure<br><em>beneath residential life.</em></h2>
+  <p>Verification is where we start. It is not where we stop.</p>
+  <div class="phase-list">
+    <div class="phase-item">
+      <div class="phase-num">01</div>
+      <div>
+        <div class="phase-title">AI Risk &amp; Verification Engine</div>
+        <p class="phase-desc">Automate screening. Eliminate fraud. Give agencies decision-ready files in seconds.</p>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">02</div>
+      <div>
+        <div class="phase-title">Autonomous Rental Matching</div>
+        <p class="phase-desc">Tenants and properties live permanently in Luuzon. AI matches continuously. One day, tenants will not search for rentals — rentals will search for tenants.</p>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">03</div>
+      <div>
+        <div class="phase-title">Residential Operating System</div>
+        <p class="phase-desc">Agencies operate on fully automated infrastructure. Decisions, maintenance, lifecycle — frictionless.</p>
+      </div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-num">04</div>
+      <div>
+        <div class="phase-title">Smart Habitat Infrastructure</div>
+        <p class="phase-desc">Homes connected to Luuzon's intelligence. Energy, access, maintenance, security — Living-as-a-Service.</p>
+      </div>
+    </div>
+  </div>
+  <p>Every application processed, every rejection logged, every lease signed makes Luuzon smarter. Rejected applicants are not failures — they are data. The intelligence compounds with every interaction.</p>
+  <div class="pull">"What's your Luuzon Score?" will be as normal as a credit check. We are making that happen.</div>
+</div>
+
+<div class="closing">
+  <h2 class="closing-title">The rental market runs on trust.<br><em>We restored it.</em></h2>
+  <p>We are not anti-human. We are anti-waste. We are not removing people from the rental process. We are removing the 45 minutes of manual work that no human should be doing in 2026.</p>
+  <p>The agencies that understand this will lead the market. We are looking for the ones who are ready.</p>
+  <a href="https://www.cal.eu/luuzon/30min" target="_blank" rel="noopener noreferrer" class="cta-block">→ Book a demo — see it run on a real application</a>
+</div>
+
+<div class="footer">
+  <span>LUUZON.COM</span>
+  <span>TRUST IN RENTALS, RESTORED — 2026</span>
+</div>
+
+</body>
+</html>

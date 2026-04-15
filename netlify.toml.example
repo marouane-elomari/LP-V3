@@ -1,0 +1,24 @@
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "https://YOUR_SUPABASE_PROJECT_ID.supabase.co/functions/v1/make-server-cfc3b146/sitemap.xml"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
+
+[[redirects]]
+  # Redirect root to /fr by default
+  from = "/"
+  to = "/fr"
+  status = 301
+  force = false
+
+[[redirects]]
+  # Single Page Application fallback
+  from = "/*"
+  to = "/index.html"
+  status = 200

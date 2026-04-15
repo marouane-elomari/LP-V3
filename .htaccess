@@ -20,3 +20,9 @@ RewriteRule ^ - [L]
 # This allows BrowserRouter to handle SPA routes
 # --------------------------------------------
 RewriteRule ^ index.html [L]
+
+# --------------------------------------------
+# 4️⃣ Fallback: serve index.html for any 404
+# Catches cases where rewrite rules don't fire
+# --------------------------------------------
+ErrorDocument 404 /index.html

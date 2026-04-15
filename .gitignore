@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+cms/node_modules/
+
+# Build output (deployed separately to live branch)
+dist/
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.production
+cms/.env
+
+# Strapi data
+cms/.tmp/
+cms/public/uploads/
+
+# Editor & OS
+.DS_Store
+Thumbs.db
+.claude/
+
+# Logs
+*.log
+npm-debug.log*
