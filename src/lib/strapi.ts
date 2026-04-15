@@ -1,4 +1,4 @@
-const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'https://luuzon-cms-production.up.railway.app';
 const STRAPI_TOKEN = import.meta.env.VITE_STRAPI_TOKEN || '';
 
 const headers: Record<string, string> = {
