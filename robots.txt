@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://luuzon.com/sitemap.xml
+
+# Désactiver l'indexation des pages admin
+Disallow: /*/admin/
+Disallow: /*/login
+Disallow: /fr/admin/
+Disallow: /en/admin/
+Disallow: /fr/login
+Disallow: /en/login
+
+# Désactiver l'indexation des pages légales peu prioritaires
+# (optionnel - les commentaires ci-dessous permettent de les bloquer si souhaité)
+# Disallow: /*/privacy
+# Disallow: /*/legal
